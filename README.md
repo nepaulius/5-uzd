@@ -4,6 +4,7 @@ ___
 Panaudodamas std::map nustačiau, kiek kartų žodžiai pasikarotja tekste :
 ```cpp
 std::map <std::string,std::vector<int> > vieta;
+...
 
 std::istringstream b(sLine);
     while ( b >>tmp)
@@ -22,17 +23,12 @@ Suskaičiavau, kuriose eilutese yra pasikartojantis žodis :
 
 Lentelė:
 
-| Žodis/Teksto eilutė | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---------------------|---|---|---|---|---|---|---|
-| avį                 |   |   | + | + |   |   |   |
-| ir                  |   |   | + |   |   |   | + |
-| kad                 | + |   |   |   |   | + |   |
-| kėdainių            | + |   |   |   |   |   | + |
-| limitas             |   | + |   |   |   | + |   |
-| medžioti            |   | + |   |   | + |   |   |
-| o                   |   |   |   |   | + |   |   |
-| papjovė             |   |   | + | + |   |   |   |
-| vilkų               | + | + |   |   |   | + |   |
+| Žodis/Teksto eilutė | 1 | 2 | 3 | 4 | 
+|---------------------|---|---|---|---|
+| ir                  |   | + | + |   |
+| iš                  | + | + |   |   |
+| komandos            |   | + | + |   |
+
 
 ___
 **3 dalis**
