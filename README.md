@@ -1,12 +1,18 @@
 # 5-uzd
 ___
 **1 dalis**
-Panaudodamas std::map nustačiau, kurie žodžiai pasikartoja daugiau nei 1 kartą :
+Panaudodamas std::map nustačiau, kiek kartų žodžiai pasikarotja tekste :
+```cpp
+std::map <std::string,std::vector<int> > vieta;
 
-![](https://user-images.githubusercontent.com/45967745/58529612-3dbf8900-81e4-11e9-9295-f9600c86800e.png)
-
-![](https://user-images.githubusercontent.com/45967745/58529645-5760d080-81e4-11e9-9852-e56a1b9d63dd.png)
-
+std::istringstream b(sLine);
+    while ( b >>tmp)
+    {
+        vieta[tmp].push_back(count);
+    }
+    count++;
+}
+```
 ___
 **2 dalis**
 
