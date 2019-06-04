@@ -5,7 +5,8 @@ Panaudodamas std::map nustačiau, kiek kartų žodžiai pasikarotja tekste :
 ```cpp
 std::map <std::string,std::vector<int> > vieta;
 ...
-
+...
+...
 std::istringstream b(sLine);
     while ( b >>tmp)
     {
