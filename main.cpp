@@ -11,11 +11,20 @@
 #include <regex>
 #include <bits/stdc++.h>
 #include <set>
+#include <cstdlib>
 
  void URL(std::string tekastas)
  {
 
     transform(tekastas.begin(),tekastas.end(),tekastas.begin(),::tolower);
+
+    tekastas.erase(std::remove_if(tekastas.begin(),
+                             tekastas.end(),
+                             [](char c)
+                             { return c==','||c=='('|| c==')';}),
+              tekastas.end());
+
+
     std::string word;
     std::set<std::string> Linkai;
     std::istringstream iss(tekastas);
@@ -37,6 +46,7 @@
 
 int main()
 {
+ system ("chcp 1257");
 
 std::ifstream in("my_data.txt");
 
