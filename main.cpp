@@ -12,6 +12,10 @@
 #include <bits/stdc++.h>
 #include <set>
 #include <cstdlib>
+#include <functional>
+
+typedef std::pair<std::string,std::vector<int>> pair;
+
 
  void URL(std::string tekastas)
  {
@@ -83,16 +87,35 @@ for (int i = 0; i < sLine.size(); i++)
     }
     count++;
 }
+std::vector<pair> vec;
+std::copy(vieta.begin(),
+			vieta.end(),
+			std::back_inserter<std::vector<pair>>(vec));
 
- for( const auto& pair : vieta )
-    {
-        if(pair.second.size()>1)
-        {
-        std::cout <<"Zodis : "<< pair.first << " pasikartoja : "<<pair.second.size()<<" kartus ir yra " ;
-        for( int n : pair.second ) std::cout << n+1 <<" " ;
+
+			std::sort(vec.begin(), vec.end(),
+			[](const pair& l, const pair& r) {
+				if (l.second.size() != r.second.size())
+					return l.second.size() < r.second.size();
+
+				return l.first < r.first;
+			});
+
+
+			for (auto &pair: vec) {
+                    if(pair.second.size()>1)
+                    {
+                    std::cout << "zodis " << pair.first << " pasikartoja " << pair.second.size() <<" kartus ir yra " ;
+        pair.second.erase(std::unique(pair.second.begin(), pair.second.end()), pair.second.end());
+                    for( int n : pair.second )
+                    {
+
+                        std::cout << n+1 <<" " ;
+                    }
         std::cout << "eilutese"<<std::endl ;
-        }
-    }
+                    }
+
+	}
 
     URL(str);
 
